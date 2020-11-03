@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="customer.jhseok.handlers.CatalogServiceHandlerTest" time="0.041" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="customer.jhseok.handlers.CatalogServiceHandlerTest" time="0.109" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.6.0.1+10-LTS-sapmachine"/>
     <property name="sun.boot.library.path" value="/usr/lib/sapmachine-jdk/sapmachine-jdk-11.0.6.0.1/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/user/projects/jhseok"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/user/projects/jhseok/srv"/>
     <property name="java.vm.vendor" value="SAP SE"/>
     <property name="java.vendor.url" value="https://sapmachine.io/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -14,7 +14,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/user/projects/jhseok"/>
+    <property name="user.dir" value="/home/user/projects/jhseok/srv"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.6.0.1+10-LTS-sapmachine"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
@@ -43,7 +43,7 @@
     <property name="java.class.path" value="/usr/lib/maven/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean package"/>
     <property name="java.home" value="/usr/lib/sapmachine-jdk/sapmachine-jdk-11.0.6.0.1"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -60,7 +60,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="customer.jhseok.handlers.CatalogServiceHandlerTest" name="testNoDiscount" time="0.041"/>
+  <testcase classname="customer.jhseok.handlers.CatalogServiceHandlerTest" name="testNoDiscount" time="0.109"/>
   <testcase classname="customer.jhseok.handlers.CatalogServiceHandlerTest" name="testDiscount" time="0"/>
   <testcase classname="customer.jhseok.handlers.CatalogServiceHandlerTest" name="testNoStockAvailable" time="0"/>
 </testsuite>

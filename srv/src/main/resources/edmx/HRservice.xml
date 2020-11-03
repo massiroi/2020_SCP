@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="HRservice" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="DeptSrv" EntityType="HRservice.DeptSrv">
+          <NavigationPropertyBinding Path="Employee" Target="EmployeeSrv"/>
+        </EntitySet>
+        <EntitySet Name="EmployeeSrv" EntityType="HRservice.EmployeeSrv">
+          <NavigationPropertyBinding Path="Dept" Target="DeptSrv"/>
+        </EntitySet>
+      </EntityContainer>
+      <EntityType Name="DeptSrv">
+        <Key>
+          <PropertyRef Name="ID"/>
+        </Key>
+        <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="NAME" Type="Edm.String"/>
+        <Property Name="CREATE_DATE" Type="Edm.Date"/>
+        <NavigationProperty Name="Employee" Type="Collection(HRservice.EmployeeSrv)" Partner="Dept"/>
+      </EntityType>
+      <EntityType Name="EmployeeSrv">
+        <Key>
+          <PropertyRef Name="ID"/>
+        </Key>
+        <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="NAME" Type="Edm.String"/>
+        <Property Name="SALARY" Type="Edm.Int32"/>
+        <NavigationProperty Name="Dept" Type="HRservice.DeptSrv" Partner="Employee">
+          <ReferentialConstraint Property="Dept_ID" ReferencedProperty="ID"/>
+        </NavigationProperty>
+        <Property Name="Dept_ID" Type="Edm.Int32"/>
+      </EntityType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

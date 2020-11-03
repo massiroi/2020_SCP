@@ -33,6 +33,167 @@
       "@Capabilities.InsertRestrictions.Insertable": false,
       "@Capabilities.UpdateRestrictions.Updatable": false
     },
+    "HRservice": {
+      "@source": "srv/HRservice.cds",
+      "kind": "service"
+    },
+    "HRservice.DeptSrv": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "my.Dept"
+            ]
+          }
+        }
+      },
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "NAME": {
+          "type": "cds.String"
+        },
+        "CREATE_DATE": {
+          "type": "cds.Date"
+        },
+        "Employee": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "HRservice.EmployeeSrv",
+          "on": [
+            {
+              "ref": [
+                "Employee",
+                "Dept"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      },
+      "$syntax": "projection"
+    },
+    "HRservice.EmployeeSrv": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "my.Employee"
+            ]
+          },
+          "columns": [
+            "*"
+          ]
+        }
+      },
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "NAME": {
+          "type": "cds.String"
+        },
+        "SALARY": {
+          "type": "cds.Integer"
+        },
+        "Dept": {
+          "type": "cds.Association",
+          "target": "HRservice.DeptSrv",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ],
+              "$generatedFieldName": "Dept_ID"
+            }
+          ]
+        },
+        "Dept_ID": {
+          "type": "cds.Integer",
+          "@odata.foreignKey4": "Dept"
+        }
+      },
+      "$syntax": "entity"
+    },
+    "my.Dept": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "NAME": {
+          "type": "cds.String"
+        },
+        "CREATE_DATE": {
+          "type": "cds.Date"
+        },
+        "Employee": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "my.Employee",
+          "on": [
+            {
+              "ref": [
+                "Employee",
+                "Dept"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "my.Employee": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "NAME": {
+          "type": "cds.String"
+        },
+        "SALARY": {
+          "type": "cds.Integer"
+        },
+        "Dept": {
+          "type": "cds.Association",
+          "target": "my.Dept",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ],
+              "$generatedFieldName": "Dept_ID"
+            }
+          ]
+        },
+        "Dept_ID": {
+          "type": "cds.Integer",
+          "@odata.foreignKey4": "Dept"
+        }
+      }
+    },
     "my.bookshop.Books": {
       "kind": "entity",
       "elements": {
