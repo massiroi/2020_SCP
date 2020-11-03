@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run jhseok-4",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "customer.jhseok.Application",
+      "projectName": "jhseok",
+      "preLaunchTask": "Build jhseok",
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env4",
+      "args": [
+        "--spring.profiles.active=default"
+      ],
+      "env": {
+        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/jhseok\\\",\\\"profileName\\\":\\\"default\\\"}\"}"
+      }
+    },
+    {
+      "name": "Run jhseok-5",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "customer.jhseok.Application",
+      "projectName": "jhseok",
+      "preLaunchTask": "Build jhseok",
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env5",
+      "args": [
+        "--spring.profiles.active=default"
+      ],
+      "env": {
+        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/jhseok\\\",\\\"profileName\\\":\\\"default\\\"}\"}"
+      }
+    }
+  ]
+}
