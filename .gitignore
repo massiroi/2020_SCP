@@ -13,7 +13,7 @@ default-env.json
 #/TODO
 
 # ignore all files in the build/ directory
-node_modules/
+node_modules/*
 
 # ignore doc/notes.txt, but not doc/server/arch.txt
 #doc/*.txt
